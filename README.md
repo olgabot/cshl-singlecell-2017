@@ -1,6 +1,10 @@
 # cshl-singlecell-2017
 Single Cell Analysis course at Cold Spring Harbor Laboratory 2017
 
+This is one of *many* single cell courses/tutorials. An excellent list of all
+single cell package, courses, tutorials, speakers for conferences, can be found
+[here](https://github.com/seandavi/awesome-single-cell).
+
 
 ## Getting Started (email to students)
 

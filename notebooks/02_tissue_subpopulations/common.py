@@ -1,3 +1,5 @@
+import warnings
+
 import fastcluster
 import matplotlib.pyplot as plt
 import numpy as np
@@ -96,7 +98,8 @@ def clustermap(data, xticklabels=[], yticklabels=[], method='ward',
     row_linkage = optimal_linkage(data, method=method, metric=metric)
     col_linkage = optimal_linkage(data, rows=False, method=method,
                                   metric=metric)
-
-    return sns.clustermap(data, row_linkage=row_linkage,
-                          xticklabels=xticklabels, yticklabels=yticklabels,
-                          col_linkage=col_linkage, **kwargs)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        return sns.clustermap(data, row_linkage=row_linkage,
+                              xticklabels=xticklabels, yticklabels=yticklabels,
+                              col_linkage=col_linkage, **kwargs)

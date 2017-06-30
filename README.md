@@ -5,6 +5,17 @@ This is one of *many* single cell courses/tutorials. An excellent list of all
 single cell package, courses, tutorials, speakers for conferences, can be found
 [here](https://github.com/seandavi/awesome-single-cell).
 
+## Sources of Data
+
+We will be using pre-cleaned data for the demos in the course. If you are
+interested in how the data was cleaned (removing spaces, adding `"r1_"` to the
+cell barcodes, combining multiple files, etc). Here are the GitHub repositories
+for you to browse:
+
+- [Macosko 2015](https://github.com/olgabot/macosko2015)
+- [Segerstolpe + Palasantza et al 2016](https://github.com/olgabot/segerstolpe_palasantza2016)
+- [Lönnberg + Svensson et al 2017](https://github.com/olgabot/lonnberg_svensson2017)
+
 
 ## Getting Started (email to students)
 
@@ -87,7 +98,7 @@ questions:
     * What is the biological stochasticity? (e.g. transcriptional bursting)
     * What is the technical heterogeneity? (e.g. dropout or batch effects)
 * What computational steps did they take to answer their biological question? It’s okay if these terms are over your head right now, we’ll go over them in the course. What’s important is to capture the overall flow chart.
-* E.g. Filtered genes → PCA → k-means clustering → differential expression
+    * E.g. Filtered genes → PCA → k-means clustering → differential expression
 
 ### Software
 **Please make sure to do this before the course starts!**

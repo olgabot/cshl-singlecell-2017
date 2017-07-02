@@ -19,10 +19,10 @@ expression, cell_metadata, gene_metadata = macosko2015.load_big_clusters()
 cluster_ids_unique = cell_metadata['cluster_id'].unique()
 
 cluster_n_to_name = {24: 'Rods', 25: 'Cones',
-                      26: 'Bipolar cells\n(group1)',
-                      27: 'Bipolar cells\n(group2)',
-                      33: 'Bipolar cells\n(group3)',
-                      34: 'Muller glia'}
+                     26: 'Bipolar cells\n(group1)',
+                     27: 'Bipolar cells\n(group2)',
+                     33: 'Bipolar cells\n(group3)',
+                     34: 'Muller glia'}
 
 cluster_id_to_name = dict(('cluster_{}'.format(str(i).zfill(2)), name)
                           for i, name in cluster_n_to_name.items())

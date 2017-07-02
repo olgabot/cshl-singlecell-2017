@@ -106,3 +106,6 @@ ENV/
 
 # OS X
 .DS_Store
+
+# Macosko 2015 data
+GSM1626793_P14Retina_1.digital_expression.txt.gz

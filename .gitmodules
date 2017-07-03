@@ -1,3 +1,6 @@
 [submodule "robust-pca"]
 	path = robust-pca
 	url = https://github.com/olgabot/robust-pca
+[submodule "sklearn_tutorial"]
+	path = sklearn_tutorial
+	url = git@github.com:jakevdp/sklearn_tutorial

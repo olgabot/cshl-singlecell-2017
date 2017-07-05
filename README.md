@@ -16,6 +16,39 @@ for you to browse:
 - [Segerstolpe + Palasantza et al 2016](https://github.com/olgabot/segerstolpe_palasantza2016)
 - [Lönnberg + Svensson et al 2017](https://github.com/olgabot/lonnberg_svensson2017)
 
+## Dependencies
+
+We'll use some additional dependencies outside of the scientific python ecosystem.
+
+Python optimal leaf ordering (`polo`), Macosko2015 data (`macosko2015`), and
+faster hierarchical clustering (`fastcluster`)
+
+```
+pip install polo macosko2015 fastcluster
+```
+
+Graph based clustering:
+```
+pip install git+https://github.com/jacoblevine/phenograph.git
+```
+
+Pseudotime modeling:
+```
+pip install git+https://github.com/TeichLab/GPfates.git
+```
+
+[Holoviews](http://holoviews.org/) and [Bokeh](http://bokeh.pydata.org/en/latest/):
+
+```
+conda install --channel ioam holoviews bokeh
+```
+
+For visualization with [Altair](https://altair-viz.github.io/index.html):
+```
+conda install altair vega --channel conda-forge
+jupyter nbextension enable vega --py --sys-prefix
+```
+
 
 ## Getting Started (email to students)
 

@@ -2,12 +2,31 @@
 
 ![Single cell analysis overview](notebooks/figures/singlecell_rnaseq_analysis_overview.png)
 
-## Python
+## 0. Python Introduction
+- Object orientation
 
-## Strings
+### Strings
+
+- `str.split`
+- `str.upper`
+- indexing: `s[:10]` , `s[4]`, `s[6:]`, `s[-1]`, `s[:-5]`
 
 ### Pandas
-## 2. Finding structure
+
+## 1. Quality control
+
+Coding
+
+- `pd.read_csv`, `pd.read_table`
+- `df.rename`
+- `str.split`
+- `df.colname.str.split`
+- `df.T` / `df.transpose()`
+- 
+
+## 2. Normalize
+
+## 3. Find structure
 
 ### Clustering
 
@@ -62,4 +81,11 @@ Non-linear
   - Makes slight differences bigger
   - Depends on random state
 
-## GitHub
+## 4. Find characteristic features
+
+
+## 5. Interpret
+
+## Other topics
+
+### GitHub

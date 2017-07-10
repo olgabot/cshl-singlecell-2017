@@ -1,3 +1,5 @@
+import warnings
+
 # Interactive jupyter widgets - use IntSlider directly for more control
 from ipywidgets import IntSlider, interact
 

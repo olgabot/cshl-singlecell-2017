@@ -27,9 +27,10 @@ faster hierarchical clustering (`fastcluster`)
 pip install polo macosko2015 fastcluster
 ```
 
-Graph based clustering:
+Graph based clustering and visualization:
 ```
 pip install git+https://github.com/jacoblevine/phenograph.git
+conda install networkx
 ```
 
 Pseudotime modeling:

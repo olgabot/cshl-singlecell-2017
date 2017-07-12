@@ -281,8 +281,8 @@ def load_pancreas():
     return pancreas, pancreas_cells
 
 
-def compare_mds_tsne(stddev=0, metric='euclidean', tsne_init='pca',
-                     random_state=0):
+def compare_mds_tsne(algorithm='MDS', stddev=0, #metric='euclidean',
+                     tsne_init='pca', random_state=0):
     cmap = plt.cm.viridis
     n_points = 1000
     # random_state = 0
@@ -293,11 +293,11 @@ def compare_mds_tsne(stddev=0, metric='euclidean', tsne_init='pca',
         X = X + np.random.normal(size=np.product(X.shape), scale=0.1).reshape(
             X.shape)
 
-    fig = plt.figure(figsize=(12, 4))
-    plt.suptitle("Manifold Learning with %i points" % (n_points))
+    fig = plt.figure(figsize=(8, 4))
+    # plt.suptitle("Manifold Learning with %i points" % (n_points))
 
     # Plot original data
-    ax = fig.add_subplot(131, projection='3d')
+    ax = fig.add_subplot(121, projection='3d')
     ax.scatter(X[:, 0], X[:, 1], X[:, 2], c=sample_order, cmap=cmap)
     ax.view_init(4, -72)
 
@@ -307,51 +307,38 @@ def compare_mds_tsne(stddev=0, metric='euclidean', tsne_init='pca',
     tsne_kws = dict(init=tsne_init)
     tsne_kws.update(mds_kws)
 
-    if metric != 'euclidean':
-        X = scipy.spatial.distance.squareform(
-            scipy.spatial.distance.pdist(X, metric=metric))
-        mds_kws['dissimliarity'] = 'precomputed'
-        tsne_kws['metric'] = 'precomputed'
-
-        print(
-            'FYI not initializing t-SNE with PCA since distances are precomputed')
-        tsne_kws.pop('init')
-
     # Perform MDS and plot it
-    t0 = time()
-    mds = manifold.MDS(max_iter=100, n_init=1, **mds_kws)
-    Y = mds.fit_transform(X)
-    t1 = time()
-    print("MDS: %.2g sec" % (t1 - t0))
-    ax = fig.add_subplot(1, 3, 2)
+    if algorithm == "MDS":
+        smusher = manifold.MDS(max_iter=100, n_init=1, **mds_kws)
+    # Perform t-SNE and plot it
+    if algorithm == 'TSNE':
+        smusher = manifold.TSNE(**tsne_kws)
+    if algorithm == 'PCA':
+        smusher = PCA(n_components=2)
+    if algorithm == 'ICA':
+        smusher = FastICA(n_components=2)
+    if algorithm == 'NMF':
+        smusher = NMF(n_components=2)
+        X -= X.min()
+
+    Y = smusher.fit_transform(X)
+
+    ax = fig.add_subplot(1, 2, 2)
     plt.scatter(Y[:, 0], Y[:, 1], c=sample_order, cmap=cmap, linewidth=0.5,
                 edgecolor='grey')
-    plt.title("MDS (%.2g sec)" % (t1 - t0))
+    plt.title(f"{algorithm}")
     ax.xaxis.set_major_formatter(NullFormatter())
     ax.yaxis.set_major_formatter(NullFormatter())
     plt.axis('tight')
 
-    # Perform t-SNE and plot it
-    t0 = time()
-    tsne = manifold.TSNE(**tsne_kws)
-    Y = tsne.fit_transform(X)
-    t1 = time()
-    print("t-SNE: %.2g sec" % (t1 - t0))
-    ax = fig.add_subplot(1, 3, 3)
-    plt.scatter(Y[:, 0], Y[:, 1], c=sample_order, cmap=cmap, linewidth=0.5,
-                edgecolor='grey')
-    plt.title("t-SNE (%.2g sec)" % (t1 - t0))
-    ax.xaxis.set_major_formatter(NullFormatter())
-    ax.yaxis.set_major_formatter(NullFormatter())
-    plt.axis('tight')
-    plt.show()
 
 
 def explore_manifold():
     ipywidgets.interact(
         compare_mds_tsne,
-        metric=ipywidgets.Dropdown(options=['euclidean', 'cityblock'],
-                                   value='euclidean', description="Distance Metric"),
+        algorithm=['TSNE', 'MDS', 'PCA', 'ICA', 'NMF'],
+        # metric=ipywidgets.Dropdown(options=['euclidean', 'cityblock'],
+        #                            value='euclidean', description="Distance Metric"),
         tsne_init=['random', 'pca'],
         n_points=ipywidgets.IntSlider(value=1000, min=50, max=2000, step=50),
         random_state=ipywidgets.IntSlider(value=0, min=0, max=10),

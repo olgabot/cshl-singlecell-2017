@@ -3,7 +3,7 @@
 ![Single cell analysis overview](notebooks/figures/singlecell_rnaseq_analysis_overview.png)
 
 ## 0. Python Introduction
-- Object orientation
+
 
 ### Strings
 
@@ -11,9 +11,23 @@
 - `str.upper`
 - indexing: `s[:10]` , `s[4]`, `s[6:]`, `s[-1]`, `s[:-5]`
 
+### Built-ins
+
+- `range`
+- `dict`
+- `list`
+- `zip`
+- `enumerate`
+
 ### Pandas
 
 ## 1. Quality control
+
+Scientific
+
+- Finding accession numbers
+- Using accession numbers to download data
+- Reading in metadata files and getting 
 
 Coding
 
@@ -22,9 +36,24 @@ Coding
 - `str.split`
 - `df.colname.str.split`
 - `df.T` / `df.transpose()`
-- 
+- `df.values` / `df.as_matrix()`
+- Flattening the dataframe for plotting: `df.values.flat`
+- Summary statistics: `df.mean()` / `df.median()` / `df.mean(axis=1)`
+- Subsetting using `df.loc` and `df.iloc`
+- Basic plotting
+  - `plt.plot`
+  - `sns.distplot`
+  - `plt.savefig`
+  - `plt.scatter`
+    - Changing colors in plots
+
 
 ## 2. Normalize
+
+- Summary statistics: `df.std()`
+- `np.log` operates on the whole matrix
+- `np.sqrt` ?
+
 
 ## 3. Find structure
 
@@ -59,11 +88,11 @@ Coding goals
 
   - `smusher` object
   - `smusher.fit_transform`
-  - `smusher.compnents_`
+  - `smusher.components_`
   - `smusher.explained_variance_ratio_` (PCA only)
   - `np.random.seed(0)` and `random_state=0`
   - `sns.pairplot`
-  - `pandas.DataFrame.join`
+  - `df.join`
   - `groupby`
     - Aggregating operations: `df.groupby('celltype').mean()`
   - `sns.heatmap`

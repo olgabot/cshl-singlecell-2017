@@ -1,0 +1,118 @@
+name: cshl-sca-2017
+channels:
+- ioam
+- bioconda
+- r
+- defaults
+- conda-forge
+dependencies:
+- bleach
+- gseapy
+- altair
+- fastcluster
+- gpy
+- ipdb
+- paramz
+- vega
+- appnope
+- beautifulsoup4
+- bkcharts
+- bokeh
+- cycler
+- decorator
+- entrypoints
+- freetype
+- html5lib
+- icu
+- ipykernel
+- ipython
+- ipython_genutils
+- ipywidgets
+- jedi
+- jinja2
+- jsonschema
+- jupyter
+- jupyter_client
+- jupyter_console
+- jupyter_core
+- libiconv
+- libpng
+- libxml2
+- libxslt
+- lxml
+- markupsafe
+- matplotlib
+- mistune
+- mkl
+- nbconvert
+- nbformat
+- networkx
+- notebook
+- numpy
+- openssl
+- pandas
+- pandoc
+- pandocfilters
+- param
+- path.py
+- patsy
+- pexpect
+- pickleshare
+- pip
+- prompt_toolkit
+- ptyprocess
+- pygments
+- pyparsing
+- pyqt
+- python
+- python-dateutil
+- pytz
+- pyyaml
+- pyzmq
+- qt
+- qtconsole
+- readline
+- requests
+- scikit-learn
+- scipy
+- seaborn
+- setuptools
+- simplegeneric
+- sip
+- six
+- sqlite
+- statsmodels
+- terminado
+- testpath
+- tk
+- tornado
+- traitlets
+- wcwidth
+- wheel
+- widgetsnbextension
+- xlrd
+- xz
+- yaml
+- zlib
+- holoviews
+- pip:
+  - bs4
+  - gpclust
+  - gpfates
+  - hiveplot
+  - ipython-genutils
+  - jupyter-client
+  - jupyter-console
+  - jupyter-core
+  - macosko2015
+  - nbmerge
+  - netcdf4
+  - palettable
+  - phenograph
+  - polo
+  - prompt-toolkit
+  - psutil
+  - pycodestyle
+  - tqdm
+  - xarray
+

@@ -14,7 +14,6 @@ dependencies:
 - ipdb
 - paramz
 - vega
-- appnope
 - beautifulsoup4
 - bkcharts
 - bokeh

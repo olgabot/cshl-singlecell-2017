@@ -96,7 +96,6 @@ dependencies:
 - holoviews
 - pip:
   - bs4
-  - gpclust
   - gpfates
   - hiveplot
   - ipython-genutils

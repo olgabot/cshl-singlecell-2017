@@ -96,7 +96,6 @@ dependencies:
 - holoviews
 - pip:
   - bs4
-  - gpfates
   - hiveplot
   - ipython-genutils
   - jupyter-client

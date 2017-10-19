@@ -105,7 +105,6 @@ dependencies:
   - nbmerge
   - netcdf4
   - palettable
-  - phenograph
   - polo
   - prompt-toolkit
   - psutil
